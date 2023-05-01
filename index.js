@@ -14,8 +14,6 @@ const navLinks = document.querySelectorAll('.nav-link');
 const dateElement = document.querySelector('#date');
 
 const collection = new BooksCollection();
-const date = DateTime.local().toFormat('MMMM dd yyyy, tt');
-dateElement.textContent = date;
 
 // add data
 form.addEventListener('submit', (e) => {
@@ -36,3 +34,6 @@ navLinks.forEach((navLink) => {
 });
 
 selectSection(document.querySelector('#list'), sections, navLinks);
+
+const date = DateTime.local().toFormat('MMMM dd yyyy, tt');
+dateElement.textContent = date;
