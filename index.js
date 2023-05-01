@@ -1,3 +1,4 @@
+import { DateTime } from './node_modules/luxon/src/luxon.js';
 import BooksCollection from './modules/BooksCollection.js';
 import displayNoBook from './modules/displayNoBook.js';
 import loadData from './modules/loadData.js';
@@ -10,8 +11,11 @@ const titleEl = document.querySelector('#title');
 const authorEl = document.querySelector('#author');
 const sections = document.querySelectorAll('section');
 const navLinks = document.querySelectorAll('.nav-link');
+const dateElement = document.querySelector('#date');
 
 const collection = new BooksCollection();
+const date = DateTime.local().toFormat('MMMM dd yyyy, tt');
+dateElement.textContent = date;
 
 // add data
 form.addEventListener('submit', (e) => {
